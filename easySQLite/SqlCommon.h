@@ -112,7 +112,11 @@ public:
 
 
 //comment this directive to disable exceptions
-//#define USE_EXCEPTIONS
+#ifdef ESQL_NO_EXCEPTION_HANDLING
+#undef USE_EXCEPTIONS
+#else
+#define USE_EXCEPTIONS
+#endif
 
 
 #ifndef THROW_EXCEPTION
