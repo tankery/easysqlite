@@ -54,8 +54,9 @@ public:
 	Record* getRecordByKeyId(integer keyId);
 
 public:
-	bool addRecord(Record* record);
-	bool updateRecord(Record* record);
+	// add & update record return the affected record key id.
+	integer addRecord(Record* record);
+	integer updateRecord(Record* record);
 	bool deleteRecords(string whereCondition);
 	bool copyRecords(Table& source);
 	bool backup(Table& source);

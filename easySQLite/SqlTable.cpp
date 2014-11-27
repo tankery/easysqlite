@@ -225,7 +225,7 @@ Record* Table::getRecordByKeyId(integer keyId)
 	return NULL;
 }
 
-bool Table::addRecord(Record* record)
+integer Table::addRecord(Record* record)
 {
 	if (record)
 	{
@@ -235,13 +235,13 @@ bool Table::addRecord(Record* record)
 
 		if (rs.query(sql))
 		{
-			return true;
+			return sqlite3_last_insert_rowid(_db);
 		}
 	}
-	return false;
+	return 0;
 }
 
-bool Table::updateRecord(Record* record)
+integer Table::updateRecord(Record* record)
 {
 	if (record)
 	{
@@ -251,10 +251,10 @@ bool Table::updateRecord(Record* record)
 
 		if (rs.query(sql))
 		{
-			return true;
+			return sqlite3_last_insert_rowid(_db);
 		}
 	}
-	return false;
+	return 0;
 }
 
 bool Table::copyRecords(Table& source)
