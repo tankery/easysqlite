@@ -2,5 +2,6 @@ libeasysqlite.a
 obj/
 
 # GYP files
-easySQLite.xcodeproj
+easysqlite.xcodeproj
 sample.xcodeproj
+UnitTest++.xcodeproj

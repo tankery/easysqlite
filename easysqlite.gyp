@@ -49,4 +49,26 @@
         },
     ],
 
+    'conditions': [
+        ['OS=="linux"', {
+            'targets': [
+                {
+                    'target_name': 'easysqlite_test',
+                    'type': 'executable',
+
+                    'sources': [
+                        'easySQLite.cpp',
+                        '<!@(ls Tests/*.cpp)',
+                    ],
+
+                    'dependencies': [
+                        'easysqlite',
+                        'UnitTest++/UnitTest++.gyp:UnitTest++',
+                    ],
+
+                },
+            ],
+        }],
+    ],   # conditions
+
 }
