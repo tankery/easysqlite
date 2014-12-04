@@ -5,3 +5,7 @@ obj/
 easysqlite.xcodeproj
 sample.xcodeproj
 UnitTest++.xcodeproj
+
+# Android
+GypAndroid.mk
+*.target.mk
